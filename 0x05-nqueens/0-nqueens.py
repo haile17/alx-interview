@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-
 ''' N queen challange'''
 
-
 import sys
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
@@ -22,7 +21,6 @@ if __name__ == '__main__':
 
     result = []
     the_queens = []  # coordinates format [row, column]
-
     stop = False
     h = 0
     f = 0
@@ -32,7 +30,6 @@ if __name__ == '__main__':
         back = False
         #  iterate column
         while f < n:
-
             #  check current column safty
             safe = True
             for cord in the_queens:
@@ -41,6 +38,7 @@ if __name__ == '__main__':
                         col - (h-cord[0]) == f):
                     safe = False
                     break
+
             if not safe:
                 if f == n - 1:
                     back = True
