@@ -58,7 +58,7 @@ if __name__ == '__main__':
                     if cord[1] < n - 1:
                         h = cord[0]
                         f = cord[1]
-                for i in range(n - r):
+                for i in range(n - h):
                     the_queens.pop()
                 if h == n - 1 and f == n - 1:
                     the_queens = []
@@ -75,8 +75,8 @@ if __name__ == '__main__':
         if back:
             h -= 1
             while h >= 0:
-                f = the_queens[f][1] + 1
-                del the_queens[h] # delete previoous queen coordinates
+                f = the_queens[h][1] + 1
+                del the_queens[h]  # delete previoous queen coordinates
                 if f < n:
                     break
                 h -= 1
