@@ -3,6 +3,7 @@
 UTF-8 Validation
 """
 
+
 def validUTF8(data):
     """
     data: a list of integers
@@ -26,5 +27,3 @@ def validUTF8(data):
                 return False
             count -= 1
     return count == 0
-
-
