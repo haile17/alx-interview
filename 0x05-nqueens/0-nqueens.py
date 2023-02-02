@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-
 ''' N queen challange'''
 
-
 import sys
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-        
+           
     try:
         n = int(sys.argv[1])
     except ValueError:
@@ -22,7 +21,6 @@ if __name__ == '__main__':
 
     result = []
     the_queens = []  # coordinates format [row, column]
-
     stop = False
     h = 0
     f = 0
@@ -32,14 +30,15 @@ if __name__ == '__main__':
         back = False
         #  iterate column
         while f < n:
-
             #  check current column safty
             safe = True
             for cord in the_queens:
                 col = cord[1]
-                if(col == f or col + (h - cord[0]) == f or col - (h-cord[0]) == f):
+                if(col == f or col + (h - cord[0]) == f or
+                        col - (h-cord[0]) == f):
                     safe = False
                     break
+
             if not safe:
                 if f == n - 1:
                     back = True
@@ -58,7 +57,7 @@ if __name__ == '__main__':
                     if cord[1] < n - 1:
                         h = cord[0]
                         f = cord[1]
-                for i in range(n - r):
+                for i in range(n - h):
                     the_queens.pop()
                 if h == n - 1 and f == n - 1:
                     the_queens = []
@@ -75,8 +74,8 @@ if __name__ == '__main__':
         if back:
             h -= 1
             while h >= 0:
-                f = the_queens[f][1] + 1
-                del the_queens[h] # delete previoous queen coordinates
+                f = the_queens[h][1] + 1
+                del the_queens[h]  # delete previoous queen coordinates
                 if f < n:
                     break
                 h -= 1
@@ -84,7 +83,7 @@ if __name__ == '__main__':
                 break
             continue
         h += 1
-    
+
     for idx, val in enumerate(result):
         if idx == len(result) - 1:
             print(val, end='')
