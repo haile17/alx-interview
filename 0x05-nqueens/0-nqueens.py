@@ -9,7 +9,7 @@ if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-        
+           
     try:
         n = int(sys.argv[1])
     except ValueError:
@@ -37,7 +37,8 @@ if __name__ == '__main__':
             safe = True
             for cord in the_queens:
                 col = cord[1]
-                if(col == f or col + (h - cord[0]) == f or col - (h-cord[0]) == f):
+                if(col == f or col + (h - cord[0]) == f or
+                        col - (h-cord[0]) == f):
                     safe = False
                     break
             if not safe:
@@ -84,7 +85,7 @@ if __name__ == '__main__':
                 break
             continue
         h += 1
-    
+
     for idx, val in enumerate(result):
         if idx == len(result) - 1:
             print(val, end='')
