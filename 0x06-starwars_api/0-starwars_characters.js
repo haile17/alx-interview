@@ -86,4 +86,7 @@ if (process.argv.length > 2) {
       .catch(allErr => console.log(allErr));
   });
 }
+<<<<<<< HEAD
 >>>>>>> 03c75985bad15bf5d643ccfb14c4296c254b2033
+=======
+>>>>>>> a67f96f2fcbb16263db4546446ed9336b0d630a6
